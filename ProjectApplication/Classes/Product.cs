@@ -19,5 +19,13 @@ namespace ProjectApplication.Classes
         public double Price { get; set; }
 
         public int Quantity { get; set; }
+
+
+
+        public Supplier Supplier { get; set; }
+
+        public ICollection<PurchaseOrderProduct> PurchaseOrderProducts { get; set; }
+
+        public ICollection<SalesOrderProduct> SalesOrderProducts { get; set; }
     }
 }

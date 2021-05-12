@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class SalesOrderProducts
+    class SalesOrderProduct
     {
         public int SalesOrderId { get; set; }
 
         public int ProductId { get; set; }
+
+        public SalesOrder SalesOrder { get; set; }
+
+        public Product Product { get; set; }
 
     }
 }

@@ -23,7 +23,12 @@ namespace ProjectApplication.Classes
 
         public int PhoneNumber { get; set; }
 
-        public string Email { get; set; }
+        public string Email { get; set; } 
+
+        public ICollection<PurchaseOrder> PurchaseOrders { get; set; }
+
+        public ICollection<Product> Products { get; set; }
+
 
 
     }

@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class OrderStatus
+    [Flags] // add flags attribute to declare that the enum type declares bit fields (powers of two) - allows you to combine enum types 
+    public enum OrderStatus
     {
-
-        public int OrderStatusId { get; set; }
-
-        public string Name { get; set; }
+        Confirmed = 0,
+        Processing = 1,
+        Packing = 2,
+        Sent = 4,
+        Delivered = 8
 
 
     }

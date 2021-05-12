@@ -10,8 +10,6 @@ namespace ProjectApplication.Classes
     {
         public int PurchaseOrderId { get; set; }
 
-        public int OrderStatusId { get; set; }
-
         public DateTime OrderDate { get; set; }
 
         public double TotalPrice { get; set; }
@@ -21,5 +19,18 @@ namespace ProjectApplication.Classes
         public int EmployeeId { get; set; }
 
         public bool Paid { get; set; }
+
+
+
+        public OrderStatus OrderStatus { get; set; }
+
+        public Employee Employee { get; set; }
+
+        public Supplier Supplier { get; set; }
+
+        public ICollection<PurchaseOrderProduct> PurchaseOrderProducts { get; set; }
     }
+
+
 }
+

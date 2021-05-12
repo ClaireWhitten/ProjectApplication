@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class Role
+    [Flags] // add flags attribute to declare that the enum type declares bit fields (powers of two) - allows you to combine enum types (e.g. give 2 roles)
+    public enum Role
     {
-        public int RoleId { get; set; }
-
-        public string Name { get; set; }
+        Administrator = 0,
+        SalesEmployee = 1,
+        WarehouseEmployee = 2
     }
 }

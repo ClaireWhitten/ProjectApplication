@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class User
+    class UserAccount
     {
-        public int UserId { get; set; }
-
-        public int EmployeeId { get; set; }
+        [ForeignKey("Employee")]
+        public int UserAccountId { get; set; }
 
         public string UserName { get; set; }
 
@@ -18,11 +18,9 @@ namespace ProjectApplication.Classes
 
         public DateTime CreatedOn { get; set; }
 
-        public int RoleId { get; set; }
+        
 
-
-
-        public Employee Employee { get; set; }
+        public virtual Employee Employee { get; set; }
         public Role Role { get; set; }
 
 

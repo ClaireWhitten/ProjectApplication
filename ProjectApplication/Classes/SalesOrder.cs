@@ -10,8 +10,6 @@ namespace ProjectApplication.Classes
     {
         public int SalesOrderId { get; set; }
 
-        public int OrderStatusId { get; set; }
-
         public DateTime OrderDate { get; set; }
 
         public int TotalPrice { get; set; }
@@ -20,9 +18,19 @@ namespace ProjectApplication.Classes
 
         public int EmployeeId { get; set; }
 
-        public int InvoiceId { get; set; }
-
         public bool Paid { get; set; }
+
+
+
+
+        public Customer Customer { get; set; }
+
+        public Employee Employee { get; set; }
+
+        public ICollection<SalesOrderProduct> SalesOrderProducts { get; set; }
+
+        public virtual Invoice Invoice { get; set; }
+
 
     }
 }

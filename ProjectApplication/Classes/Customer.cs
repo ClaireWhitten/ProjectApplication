@@ -27,6 +27,8 @@ namespace ProjectApplication.Classes
 
         public string Email { get; set; }
 
+        public ICollection<SalesOrder> SalesOrders { get; set; }
+
 
     }
 }

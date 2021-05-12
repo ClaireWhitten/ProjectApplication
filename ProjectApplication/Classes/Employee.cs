@@ -10,8 +10,6 @@ namespace ProjectApplication.Classes
     {
         public int EmployeeId { get; set; }
 
-        public int UserId { get; set; }
-
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -32,15 +30,18 @@ namespace ProjectApplication.Classes
 
         public DateTime StartDate { get; set; }
 
-        public int RoleId { get; set; }
-
-
-
         public Role Role { get; set; }
-        public User User { get; set; }
 
 
 
+
+        public virtual UserAccount UserAccount { get; set; }
+
+        public ICollection<PurchaseOrder> PurchaseOrders { get; set; } //only sellers
+
+        public ICollection<SalesOrder> SalesOrders { get; set; } // only sellers
+
+       
 
     }
 }

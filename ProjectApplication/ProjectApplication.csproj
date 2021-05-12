@@ -79,12 +79,12 @@
     <Compile Include="Classes\OrderStatus.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\PurchaseOrder.cs" />
-    <Compile Include="Classes\PurchaseOrderProducts.cs" />
+    <Compile Include="Classes\PurchaseOrderProduct.cs" />
     <Compile Include="Classes\Role.cs" />
     <Compile Include="Classes\SalesOrder.cs" />
-    <Compile Include="Classes\SalesOrderProducts.cs" />
+    <Compile Include="Classes\SalesOrderProduct.cs" />
     <Compile Include="Classes\Supplier.cs" />
-    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\UserAccount.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
