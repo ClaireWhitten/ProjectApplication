@@ -78,6 +78,7 @@
     <Compile Include="Classes\Invoice.cs" />
     <Compile Include="Classes\OrderStatus.cs" />
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\ProjectApplicationContext.cs" />
     <Compile Include="Classes\PurchaseOrder.cs" />
     <Compile Include="Classes\PurchaseOrderProduct.cs" />
     <Compile Include="Classes\Role.cs" />
@@ -108,7 +109,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DB outline\Project Application Database Outline.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
