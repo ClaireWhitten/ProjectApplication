@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class PurchaseOrderProduct
+    public class PurchaseOrderProduct
     {
         [Key]
         [Column(Order = 1)]

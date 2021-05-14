@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class Customer
+    public class Customer
     {
         public int CustomerId { get; set; }
        

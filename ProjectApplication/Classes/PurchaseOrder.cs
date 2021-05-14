@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class PurchaseOrder
+    public class PurchaseOrder
     {
         public int PurchaseOrderId { get; set; }
 

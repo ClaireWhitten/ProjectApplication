@@ -25,7 +25,7 @@ namespace ProjectApplication
         {
 
             ProjectApplicationContext ctx = new ProjectApplicationContext();
-            /*ctx.Employees.Add(new Employee()
+           /* ctx.Employees.Add(new Employee()
             {
                 FirstName = "Claire",
                 LastName = "Whitten",
@@ -38,14 +38,66 @@ namespace ProjectApplication
                 Salary = 24000,
                 StartDate = new DateTime(2020, 05, 14),
                 Role = Role.Administrator
-            });*/
-
-            ctx.UserAccounts.Add(new UserAccount()
-            {
-                UserName = "Claire55",
-                Password = "Password",
-                CreatedOn = DateTime.Now
             });
+
+
+            ctx.Employees.Add(new Employee()
+            {
+                FirstName = "Kristof",
+                LastName = "Bruggeman",
+                DOB = new DateTime(1987, 04, 11),
+                Street = "Cherry Street",
+                Number = 8,
+                PostCode = 2000,
+                PhoneNumber = 045622345,
+                Email = "k_bruggeman@gmail.com",
+                Salary = 24000,
+                StartDate = new DateTime(2020, 05, 14),
+                Role = Role.SalesEmployee,
+                UserAccount = new UserAccount()
+                {
+                    UserName = "KBrugg5",
+                    Password="123",
+                    CreatedOn = DateTime.Now,
+                    Role = Role.SalesEmployee
+                }
+                
+            });
+
+            ctx.Employees.Add(new Employee()
+            {
+                FirstName = "Callum",
+                LastName = "Whitten",
+                DOB = new DateTime(1999, 04, 11),
+                Street = "Cherry Street",
+                Number = 8,
+                PostCode = 2000,
+                PhoneNumber = 045622345,
+                Email = "c_whit@gmail.com",
+                Salary = 51000,
+                StartDate = new DateTime(2020, 05, 14),
+                Role = Role.WarehouseEmployee,
+                UserAccount = new UserAccount()
+                {
+                    UserName = "Callum12",
+                    Password = "1234",
+                    CreatedOn = DateTime.Now,
+                    Role = Role.WarehouseEmployee
+                }
+
+            });
+
+            var employee = ctx.Employees.FirstOrDefault(e => e.Role == Role.Administrator);
+            
+
+            employee.UserAccount = new UserAccount()
+            {
+                UserName = "Claire",
+                Password = "12345", 
+                CreatedOn = DateTime.Now,
+                Role = Role.Administrator
+            };*/
+
 
 
             ctx.SaveChanges();
@@ -56,6 +108,35 @@ namespace ProjectApplication
 
             InitializeComponent();
             MessageBox.Show("Ended");
+        }
+
+       
+
+        private void btnLogIn_Click(object sender, RoutedEventArgs e)
+        {
+            string username = tbUserName.Text;
+            string password = tbPassword.Text;
+            ProjectApplicationContext ctx = new ProjectApplicationContext();
+            UserAccount user = ctx.UserAccounts.FirstOrDefault(u => u.UserName == username);
+            if (user != null)
+            {
+                if (user.Password == password)
+                {
+                    MainMenu mainMenu = new MainMenu(user);
+                    mainMenu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect password for this username.");
+                    tbPassword.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username does not exist.");
+                tbUserName.Clear();
+                tbPassword.Clear();
+            }
         }
     }
 }

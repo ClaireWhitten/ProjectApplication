@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class UserAccount
+    public class UserAccount
     {
         [ForeignKey("Employee")]
         public int UserAccountId { get; set; }

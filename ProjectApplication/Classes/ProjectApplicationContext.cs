@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace ProjectApplication.Classes
 {
-    class ProjectApplicationContext : DbContext
+    public class ProjectApplicationContext : DbContext
     {
 
         public ProjectApplicationContext() : base("name=ProjectApplicationDBConnectString")
         {
-            //Database.SetInitializer(new CreateDatabaseIfNotExists<ProjectApplicationContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<ProjectApplicationContext>());
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ProjectApplicationContext>());
-            Database.SetInitializer(new DropCreateDatabaseAlways<ProjectApplicationContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<ProjectApplicationContext>());
 
         }
 
